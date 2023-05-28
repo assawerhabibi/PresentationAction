@@ -1,7 +1,13 @@
-name: hello-world
-'on': push
+name: CI
+
+on: [push]
+
 jobs:
-  my-job:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: my-step
+    - uses: actions/checkout@v2
+
+    - name: Run a one-line script
+      run: echo Hello, world!
